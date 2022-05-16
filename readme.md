@@ -64,7 +64,9 @@ To check how the final version of the chronometer should work, check this **[dem
 
 
 
-###Iteration 0: Getting Started
+### Iteration 0: Getting Started
+
+<br>
 
 #### The Stopwatch UI
 
@@ -84,7 +86,7 @@ To start, **open the `index.html` page in the browser**. You should see the *sto
 
 The *stopwatch* markup, styles, and DOM functionality are located in the files `styles/style.css`, `index.html`, and `javascript/index.js`. These files already include all the needed code, and **you should not modify them**.
 
-
+<br>
 
 #### The Chronometer
 

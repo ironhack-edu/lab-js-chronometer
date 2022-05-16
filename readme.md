@@ -72,8 +72,6 @@ To let you focus on the JavaScript portion of the exercise and on developing the
 
 To start, **open the `index.html` page in the browser**. You should see the *stopwatch* as shown in the below example.  This way, you can visually check the functionality of your chronometer as you progress with the exercise.
 
-<br>
-
 <details>
   <summary> Click here to see the image</summary>
 
@@ -82,7 +80,7 @@ To start, **open the `index.html` page in the browser**. You should see the *sto
 ![](https://education-team-2020.s3-eu-west-1.amazonaws.com/web-dev/labs/chronometer.png)
 </details>
 
-
+<br>
 
 The *stopwatch* markup, styles, and DOM functionality are located in the files `styles/style.css`, `index.html`, and `javascript/index.js`. These files already include all the needed code, and **you should not modify them**.
 

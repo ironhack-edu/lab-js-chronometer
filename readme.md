@@ -1,12 +1,12 @@
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-# LAB | JS IronChronometer
+# LAB | JS Chronometer
 
 ## Introduction
 
-In this lab, we are going to create a [chronometer](https://www.dictionary.com/browse/chronometer). Chronometers are very commonly used in sports - car racing, athletics, etc. Why wouldn't we practice a bit of our JS and DOM manipulation knowledge and create our own IronChronometer? And then, we can use it to see how many minutes and seconds will take us to complete any of our labs. Sounds like a plan.
+In this lab, we are going to create a [chronometer](https://www.dictionary.com/browse/chronometer). Chronometers are very commonly used in sports - car racing, athletics, etc. We will use classess to organize and abstract our code and the JavaScript timers to create the chronometer. A perfect opportunity to sharpen our OOP skills and practice working with asynchronous JavaScript.
 
-Let's go!
+Let's get started!
 
 These are our milestones:
 

@@ -60,6 +60,10 @@ To check how the final version of the chronometer should work, check this **[dem
 
 
 
+<br>
+
+
+
 ###Iteration 0: Getting Started
 
 #### The Stopwatch UI
@@ -105,6 +109,8 @@ The methods of the `Chronometer` are not yet functional. Your task will be to im
 
 
 
+<br>
+
 
 
 ### Iteration 1: The `Chronometer` class
@@ -123,6 +129,10 @@ Let's implement the `Chronometer` class following the below requirements:
 
 
 Once done, check the test results and verify that your code is passing the checks.
+
+
+
+<br>
 
 
 
@@ -149,6 +159,10 @@ Additionally, the `start` method should accept a function as an argument. Let's 
 
 
 
+<br>
+
+
+
 ### Iteration 3: The `getMinutes` method
 
 ##### `getMinutes()` method
@@ -165,6 +179,10 @@ We're storing the number of seconds elapsed in the `currentTime` property. Howev
 
 The `getMinutes` method should take no arguments, and it should return the _number_ of minutes that have passed as an integer, as a whole number.
 To calculate the minutes, divide the current time by 60 and use the `Math.floor()` method to get a rounded number.
+
+
+
+<br>
 
 
 
@@ -185,6 +203,10 @@ The `getSeconds` method should return the number of seconds that have passed aft
 For example, if the property `currentTime` holds `75`, `getSeconds` should return `15`. If `currentTime` holds `210`, `getSeconds` should return `30`, and so on.
 
 You can use the [modulo operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder) (current time % 60) to get the number of remaining seconds.
+
+
+
+<br>
 
 
 
@@ -218,6 +240,10 @@ We'll use the `computeTwoDigitNumber` method in the following iterations to form
 
 
 
+<br>
+
+
+
 ### Iteration 6: The `stop` method
 
 ##### `stop()` method
@@ -240,6 +266,10 @@ When invoked, the `stop` method should clear the interval with the id that we ha
 
 
 
+<br>
+
+
+
 ### Iteration 7: The `reset` method
 
 ##### `reset()` method
@@ -255,6 +285,8 @@ When invoked, the `stop` method should clear the interval with the id that we ha
 The `reset()` will reset our chronometer. To do this, we need to set the value of the `currentTime` property back to `0`, and that's it!
 
 
+
+<br>
 
 
 
@@ -286,6 +318,8 @@ The `split` method should take no arguments, and it should return a string where
 </details>
 
 
+
+<br>
 
 
 

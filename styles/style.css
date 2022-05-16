@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Digi';
-  src: url('fonts/ds-digib.ttf');
+  font-family: "Digi";
+  src: url("fonts/ds-digib.ttf");
 }
 
 body {
@@ -24,7 +24,7 @@ body {
   border: 2px solid #000;
   border-radius: 20px;
   box-sizing: border-box;
-  font-family: 'Digi';
+  font-family: "Digi";
   font-size: 80px;
   height: 210px;
   margin: 0 auto;
@@ -32,9 +32,6 @@ body {
   position: relative;
   text-align: center;
   width: 220px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
 
 #splits-container {
@@ -51,8 +48,9 @@ body {
 
 #milliseconds {
   font-size: 36px;
+  margin-top: -15px;
   position: absolute;
-  top: 20px;
+  right: 20px;
 }
 
 .leash {
@@ -87,7 +85,8 @@ body {
 }
 
 .number {
-  width:40px;
+  display: inline-block;
+  width: 40px;
 }
 
 .btn {
@@ -112,15 +111,7 @@ body {
   right: 10px;
 }
 
-.btn.start {
-  background: #5fca5f;
-}
-.btn.stop {
-  background: #f14949;
-}
-.btn.reset {
-  background: #908e8e;
-}
-.btn.split {
-  background: #0851ab;
-}
+.btn.start { background: #5fca5f; }
+.btn.stop  { background: #f14949; }
+.btn.reset { background: #908e8e; }
+.btn.split { background: #0851ab; }

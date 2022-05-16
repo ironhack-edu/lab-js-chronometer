@@ -1,6 +1,6 @@
 const Chronometer = require('../javascript/chronometer');
 
-describe('Chronometer', () => {
+describe('Chronometer class', () => {
   let chronometer;
 
   beforeEach(() => {
@@ -8,20 +8,16 @@ describe('Chronometer', () => {
     chronometer = new Chronometer();
   });
 
-  it('should be a class', () => {
-    expect(typeof Chronometer).toBe('function');
-  });
-
-  it('should not expect any arguments', () => {
+  it('should not receive any arguments', () => {
     expect(Chronometer.length).toEqual(0);
   });
 
-  it('should have a `currentTime` property and its value should start off as 0', () => {
+  it('should have a `currentTime` property with the initial value set to 0', () => {
     expect(chronometer.currentTime).toBeDefined();
     expect(chronometer.currentTime).toEqual(0);
   });
 
-  it('should have a `intervalId` property and its value should start of as null', () => {
+  it('should have a `intervalId` property with the initial value set to null', () => {
     expect(chronometer.intervalId).toBeDefined();
     expect(chronometer.intervalId).toEqual(null);
   });
@@ -31,13 +27,24 @@ describe('Chronometer', () => {
       expect(typeof chronometer.start).toEqual('function');
     });
 
+    it('should receive 1 argument (printTimeCallback)', () => {
+      expect(chronometer.start.length).toEqual(1);
+    });    
+
     it('should increment by 1 the currentTime property on every 1 second interval', () => {
       chronometer.start();
       jest.advanceTimersByTime(1000);
       expect(chronometer.currentTime).toEqual(1);
     });
 
-    it('should hold 3 in currentTime property after 3 seconds', () => {
+    it('should invoke the passed argument (printTimeCallback) every 1 second', () => {
+      const printTimeCallback = jest.fn();
+      chronometer.start(printTimeCallback);
+      jest.advanceTimersByTime(2000);
+      expect(printTimeCallback.mock.calls.length).toEqual(2);
+    });
+
+    it('should increment the currentTime property to 3 after 3 seconds', () => {
       chronometer.start();
       jest.advanceTimersByTime(3000);
       expect(chronometer.currentTime).toEqual(3);
@@ -48,6 +55,10 @@ describe('Chronometer', () => {
     it('should be declared', () => {
       expect(typeof chronometer.getMinutes).toEqual('function');
     });
+
+    it('should not receive any arguments', () => {
+      expect(chronometer.getMinutes.length).toEqual(0);
+    });        
 
     it('should return a number', () => {
       chronometer.currentTime = 65;
@@ -79,6 +90,10 @@ describe('Chronometer', () => {
       expect(typeof chronometer.getSeconds).toEqual('function');
     });
 
+    it('should not receive any arguments', () => {
+      expect(chronometer.getSeconds.length).toEqual(0);
+    });    
+
     it('should return a number', () => {
       chronometer.currentTime = 3;
       expect(typeof chronometer.getSeconds(0)).toEqual('number');
@@ -104,6 +119,10 @@ describe('Chronometer', () => {
     it('should be declared', () => {
       expect(typeof chronometer.computeTwoDigitNumber).toEqual('function');
     });
+
+    it('should receive 1 argument (value)', () => {
+      expect(chronometer.computeTwoDigitNumber.length).toEqual(1);
+    });     
 
     it('should return a string', () => {
       expect(typeof chronometer.computeTwoDigitNumber(7)).toEqual('string');
@@ -135,7 +154,11 @@ describe('Chronometer', () => {
       expect(typeof chronometer.stop).toEqual('function');
     });
 
-    it('should call clear the interval', () => {
+    it('should not receive any arguments', () => {
+      expect(chronometer.stop.length).toEqual(0);
+    });        
+
+    it('should call the clearInterval', () => {
       spyOn(window, 'clearInterval');
       chronometer.stop();
       expect(clearInterval).toHaveBeenCalled();
@@ -156,6 +179,10 @@ describe('Chronometer', () => {
       expect(typeof chronometer.reset).toEqual('function');
     });
 
+    it('should not receive any arguments', () => {
+      expect(chronometer.reset.length).toEqual(0);
+    });       
+
     it('should reset the value of the "currentTime" property to 0', () => {
       chronometer.currentTime = 5;
       chronometer.reset();
@@ -167,6 +194,10 @@ describe('Chronometer', () => {
     it('should be declared', () => {
       expect(typeof chronometer.split).toEqual('function');
     });
+
+    it('should not receive any arguments', () => {
+      expect(chronometer.split.length).toEqual(0);
+    });           
 
     it('should return valid format with minutes and seconds', () => {
       chronometer.currentTime = 5;
@@ -186,14 +217,16 @@ describe('Chronometer', () => {
     // If you decide to work on the bonus iteration,
     // comment the previous test and uncomment the following
     // it('should return valid format with minutes, seconds and milliseconds', () => {
-    //   let min = chronometer.getMinutes();
-    //   let sec = chronometer.getSeconds();
-    //   let milli = chronometer.getMilliseconds();
-    //   if (min < 10) {
-    //     expect(chronometer.split()).toEqual(`0${min}:0${sec}:0${milli}`);
-    //   } else {
-    //     expect(chronometer.split()).toEqual(`${min}:${sec}:${milli}`);
-    //   }
+    //   const minNum = chronometer.getMinutes();
+    //   const secNum = chronometer.getSeconds();
+    //   const milliNum = chronometer.getMilliseconds();
+
+    //   const minStr = chronometer.computeTwoDigitNumber(minNum);
+    //   const secStr = chronometer.computeTwoDigitNumber(secNum);
+    //   const milliStr = chronometer.computeTwoDigitNumber(milliNum);
+
+    //   expect(chronometer.split()).toEqual(`${minStr}:${secStr}:${milliStr}`);
     // });
+
   });
 });

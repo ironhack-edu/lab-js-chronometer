@@ -3,7 +3,7 @@ class Chronometer {
     // ... your code goes here
   }
 
-  start(callback) {
+  start(printTimeCallback) {
     // ... your code goes here
   }
 
